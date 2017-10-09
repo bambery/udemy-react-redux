@@ -1,11 +1,22 @@
+# project files
+secret.js
+
 /node_modules
 bundle.js
 npm-debug.log
 .DS_Store
 
-# IntelliJ
-*.iml
-/.idea
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
 
-# don't give the internet my youtube api key
-secret.js
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
+tags
