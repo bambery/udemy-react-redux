@@ -15,18 +15,22 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
-    YTSearch({key: Secret.youtube, term: 'cats'}, (videos) => {
+    this.videoSearch('kittens');
+  }
+ 
+  videoSearch(term) {
+    YTSearch({key: Secret.youtube, term: term}, (videos) => {
       this.setState({ 
         videos: videos,
         selectedVideo: videos[0]
       }); 
     });
-  }
+  } 
 
   render(){
     return ( 
     <div>
-      <SearchBar />
+      <SearchBar onSearchTermChange={ term => this.videoSearch(term) } />
       <VideoDetail video={ this.state.selectedVideo }/>
       <VideoList 
         onVideoSelect={ selectedVideo => this.setState({selectedVideo}) }
